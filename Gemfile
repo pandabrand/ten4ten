@@ -14,6 +14,8 @@ group :development, :test do
   gem 'guard-rspec', '0.5.5'
   gem 'linecache19', '0.5.13'
   gem 'debugger'
+  gem 'guard-spork', '0.3.2'
+  gem 'spork', '0.9.0'
 end
 
 
