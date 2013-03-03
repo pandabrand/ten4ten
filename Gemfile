@@ -12,7 +12,7 @@ group :development, :test do
   gem 'rspec-rails', '2.10.0'
   gem 'annotate', '2.5.0', group: :development
   gem 'guard-rspec', '0.5.5'
-  gem 'linecache19', '0.5.13'
+#  gem 'linecache19', '0.5.13'
   gem 'debugger'
 end
 
@@ -32,7 +32,7 @@ end
 group :test do
   gem 'rspec-rails', '2.10.0'
   gem 'capybara', '1.1.2'
-  gem 'rb-fsevent', '0.4.3.1', :require => false
+  gem 'rb-fsevent', '0.9', :require => false
   gem 'growl', '1.0.3'
   gem 'guard-spork', '0.3.2'
   gem 'spork', '0.9.0'
