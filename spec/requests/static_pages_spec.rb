@@ -3,41 +3,30 @@ require 'spec_helper'
 describe "StaticPages" do
 
   let(:base_title) { "Ten4Ten" }
+  subject { page }
   
   describe "Home page" do
-  	it "should have the content 'Ten4Ten'" do
-  		visit '/static_pages/home'
-  		page.should have_content("#{base_title}")
-  	end
-  	
-  	it "should have the title" do
-  		visit '/static_pages/home'
-  		page.should have_selector('title', :text => "#{base_title}")
-  	end
+    before { visit root_path }
+  	it { should have_content("#{base_title}") }
+  	it { should have_selector('title', :text => "#{base_title}") }
   end
   
   describe "Help page" do
-  	it "should have the content 'Help'" do
-  		visit '/static_pages/help'
-  		page.should have_content('Help')
-  	end
-  	
-  	it "should have the title 'Help'" do
-  		visit '/static_pages/help'
-  		page.should have_selector('title', :text => "#{base_title} > Help")
-  	end
+    before { visit help_path }
+  	it { should have_content("Help") }
+  	it { should have_selector('title', :text => "#{base_title} > Help") }
   end
   
   describe "About page" do
-  	it "should have the content 'About'" do
-  		visit '/static_pages/about'
-  		page.should have_content('About')
-  	end
-  	
-  	it "should have the title 'About'" do
-  		visit '/static_pages/about'
-  		page.should have_selector('title', :text => "#{base_title} > About")
-  	end
+    before { visit about_path }
+  	it { should have_content('About') }
+  	it { should have_selector('title', :text => "#{base_title} > About") }
   end
   
+  describe "Contact page" do
+    before { visit contact_path }
+    it { should have_content('Contact') }
+  	it { should have_selector('title', :text => "#{base_title} > Contact") }
+  end
+
 end
