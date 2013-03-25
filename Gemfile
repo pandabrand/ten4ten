@@ -6,6 +6,7 @@ gem 'bcrypt-ruby'
 gem 'pg', '0.12.2'
 gem 'faker'
 gem 'jquery-rails', '2.2.1'
+gem 'devise'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
