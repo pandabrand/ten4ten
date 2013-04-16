@@ -9,7 +9,7 @@ gem 'jquery-rails', '2.2.1'
 gem 'devise'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.5'
+  gem 'sqlite3'
   gem 'rspec-rails', '2.10.0'
   gem 'annotate', '2.5.0', group: :development
   gem 'guard-rspec', '0.5.5'

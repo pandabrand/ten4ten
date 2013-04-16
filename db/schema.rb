@@ -11,13 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130325031741) do
+ActiveRecord::Schema.define(:version => 20130414195104) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
     t.datetime "post_date"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
+
+  create_table "images", :force => true do |t|
+    t.string   "name"
+    t.string   "filename"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "album_id"
   end
 
   create_table "users", :force => true do |t|
@@ -33,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20130325031741) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
