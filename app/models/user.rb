@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   
   accepts_nested_attributes_for :album 
   before_save{ self.email.downcase }
-  before_save :create_album 
+  after_create :create_album 
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }  
@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   
   def create_album
     if album.blank?
-      self.build_album(name: self.name + "'s Album")
+      build_album(name: self.name + "'s Album")
     end
   end
   

@@ -1,12 +1,17 @@
 require 'spec_helper'
 
 describe Image do
-  @user = FactoryGirl.create(:user)
+  before { @user = FactoryGirl.create(:user) }
+    
   subject { @user }
-  
+    
   describe "can make image" do
-    before { @user.album.images.build(name: @user.name + " image", filename: "foobar.jpg") }
-    it { should respond_to(:images) }
+    before do
+      @user.save
+      @user.album.images.create(name: @user.name + " image", filename: "foobar.jpg")
+    end
+     
+    it { should be_valid }
   end
   
 end
