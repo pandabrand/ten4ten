@@ -1,7 +1,7 @@
 class Album < ActiveRecord::Base
   attr_accessible :name, :post_date
   belongs_to :user
-  has_many :images
+  has_many :images, order: :position
   
   validates :user_id, presence: true
   validates :name, presence: true

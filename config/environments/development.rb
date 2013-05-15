@@ -37,4 +37,14 @@ Ten4ten::Application.configure do
   
   #devise
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['pandabbucket'],
+      :access_key_id => ENV['AKIAJZXM62ZIJEKDD2DQ'],
+      :secret_access_key => ENV['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']
+    }
+  }
+  
 end

@@ -7,6 +7,9 @@ gem 'pg', '0.12.2'
 gem 'faker'
 gem 'jquery-rails', '2.2.1'
 gem 'devise'
+gem 'acts_as_list'
+gem 'paperclip'
+gem 'aws-sdk'
 
 group :development, :test do
   gem 'sqlite3'
